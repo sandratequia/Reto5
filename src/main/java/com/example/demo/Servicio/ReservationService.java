@@ -7,15 +7,14 @@ package com.example.demo.Servicio;
 import com.example.demo.Modelo.Reservation;
 import com.example.demo.Repositorio.CountClient;
 import com.example.demo.Repositorio.ReservationRepository;
-import java.util.List;
-import java.util.Optional;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
@@ -81,8 +80,9 @@ public class ReservationService {
         }).orElse(false);
         return d;
     }
-    
-       ////////////////////reto 5/////////////
+       
+       
+       //////////////////reto5///////////////////////////
        
        public Status getReservationStatusReport(){
            List<Reservation>completed=reservationRepository.getReservationByStatus("completed");
@@ -108,9 +108,11 @@ public class ReservationService {
                return new ArrayList<>();
            }
        }
+       
        public List<CountClient> getTopClients(){
            return reservationRepository.getTopClient();
        }
-
+     
+    
     
 }
